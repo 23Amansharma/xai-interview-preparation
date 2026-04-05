@@ -1,0 +1,48 @@
+# Project requirements / tech stack overview
+#
+# Runtime:
+# - Node.js
+# - Next.js 14
+# - React 18
+#
+# Frontend / UI:
+# - Tailwind CSS
+# - Framer Motion
+# - Headless UI
+# - Radix UI
+# - Heroicons
+# - Lucide React
+# - React Icons
+# - Sonner
+# - next-themes
+#
+# Auth:
+# - Clerk
+#
+# AI:
+# - Google Gemini API (@google/generative-ai)
+#
+# Database / ORM:
+# - Neon Database (serverless Postgres)
+# - Drizzle ORM
+# - Drizzle Kit
+#
+# Browser features:
+# - react-webcam
+# - react-hook-speech-to-text
+# - Web Speech API (speech synthesis / speech recognition)
+#
+# Utilities:
+# - dotenv
+# - moment
+# - uuid
+# - clsx
+# - class-variance-authority
+# - tailwind-merge
+# - tailwindcss-animate
+#
+# Tooling:
+# - ESLint
+# - PostCSS
+# - TypeScript
+
