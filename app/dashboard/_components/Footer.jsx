@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { Bot, CopyrightIcon, Github, Linkedin, Mail, MapPin, Phone, Twitter } from "lucide-react";
+import { Bot, CopyrightIcon, Github, Linkedin, Mail, MapPin } from "lucide-react";
 
 const footerGroups = [
   {
@@ -30,10 +30,21 @@ const footerGroups = [
   },
 ];
 
-const socialLinks = [
-  { label: "GitHub", href: "https://github.com", icon: Github },
-  { label: "LinkedIn", href: "https://linkedin.com", icon: Linkedin },
-  { label: "Twitter", href: "https://twitter.com", icon: Twitter },
+
+
+const teamMembers = [
+  {
+    name: "Aman Sharma",
+    github: "https://github.com/23Amansharma",
+    linkedin: "https://www.linkedin.com/in/aman-sharma-4aa314251/",
+    email: "2000amitkumarsharma@gmail.com",
+  },
+  {
+    name: "Alok Gupta",
+    github: "https://github.com/mrinvictus2005",
+    linkedin: "https://www.linkedin.com/in/alokgupta2005/",
+    email: "alokgupta49849@gmail.com",
+  },
 ];
 
 const Footer = () => {
@@ -101,28 +112,62 @@ const Footer = () => {
           ))}
         </div>
 
-        <div className="mt-10 flex flex-col gap-6 border-t border-white/10 pt-6 md:flex-row md:items-center md:justify-between">
-          <div className="flex items-center text-sm text-slate-400">
-            <CopyrightIcon className="mr-2 h-4 w-4" />
-            <span>{new Date().getFullYear()} Intivolution AI. All rights reserved.</span>
-          </div>
+        {/* ── Bottom Bar ── */}
+        <div className="mt-10 border-t border-white/10 pt-6">
+          <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
 
-          <div className="flex flex-wrap items-center gap-3">
-            {socialLinks.map((social) => {
-              const Icon = social.icon;
-              return (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-300 transition hover:border-indigo-400 hover:bg-indigo-500/10 hover:text-white"
-                  aria-label={social.label}
-                >
-                  <Icon className="h-4 w-4" />
-                </a>
-              );
-            })}
+            {/* Left: Copyright + Team credits */}
+            <div className="space-y-3">
+              <div className="flex items-center text-sm text-slate-400">
+                <CopyrightIcon className="mr-2 h-4 w-4" />
+                <span>{new Date().getFullYear()} Intivolution AI. All rights reserved.</span>
+              </div>
+
+              {/* Made by — Members */}
+              <div className="space-y-2">
+                <p className="text-xs text-slate-500">Made with ♥ by</p>
+                {teamMembers.map((member) => (
+                  <div key={member.name} className="flex flex-wrap items-center gap-2 text-xs">
+                    <span className="text-slate-400 font-medium">{member.name}</span>
+                    <span className="text-slate-700">·</span>
+                    {/* GitHub */}
+                    <a
+                      href={member.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1 text-slate-500 transition hover:text-white"
+                    >
+                      <Github className="h-3 w-3" />
+                      GitHub
+                    </a>
+                    <span className="text-slate-700">·</span>
+                    {/* LinkedIn */}
+                    <a
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1 text-slate-500 transition hover:text-white"
+                    >
+                      <Linkedin className="h-3 w-3" />
+                      LinkedIn
+                    </a>
+                    <span className="text-slate-700">·</span>
+                    {/* Email */}
+                    <a
+                      href={`mailto:${member.email}`}
+                      className="flex items-center gap-1 text-slate-500 transition hover:text-white"
+                    >
+                      <Mail className="h-3 w-3" />
+                      {member.email}
+                    </a>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right: placeholder for future social links */}
+            <div />
+
           </div>
         </div>
       </div>
